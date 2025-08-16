@@ -8,8 +8,8 @@ from groq import Groq
 
 # init
 app = FastAPI()
-client = Groq(api_key=os.getenv("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"))
-resend.api_key = os.getenv("re_PheiYwxi_EvyNZyfpXReeGLFeHifzqvNN")
+client = Groq(api_key=os.getenv("GROQ_API_KEY"))
+resend.api_key = os.getenv("RESEND_API_KEY")
 
 # templates
 app.mount("/static", StaticFiles(directory="static"), name="static")
