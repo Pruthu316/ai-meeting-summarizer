@@ -1,6 +1,6 @@
 fastapi
 uvicorn
-groq
-resend
 jinja2
 python-multipart
+groq
+resend
