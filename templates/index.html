@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>AI Meeting Summarizer</title>
+</head>
+<body>
+  <h2>Upload Transcript</h2>
+  <form method="post" action="/summarize">
+    <textarea name="transcript" rows="8" cols="60" placeholder="Paste meeting transcript..."></textarea><br><br>
+    <input type="text" name="prompt" placeholder="Enter instruction (e.g. Summarize in bullets)"><br><br>
+    <button type="submit">Generate Summary</button>
+  </form>
+
+  {% if summary %}
+    <h2>Generated Summary</h2>
+    <form method="post" action="/share">
+      <textarea name="summary" rows="8" cols="60">{{ summary }}</textarea><br><br>
+      <input type="text" name="recipients" placeholder="Enter recipient emails, comma-separated"><br><br>
+      <button type="submit">Share via Email</button>
+    </form>
+    {% if message %}
+      <p>{{ message }}</p>
+    {% endif %}
+  {% endif %}
+</body>
+</html>
